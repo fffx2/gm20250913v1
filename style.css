@@ -1,0 +1,151 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+:root {
+    --panel-bg: #f7f9fc;
+    --border-color: #e0e4e8;
+    --primary-text: #2c3e50;
+    --secondary-text: #5a6a79;
+    --success-color: #27ae60;
+    --error-color: #c0392b;
+    --aaa-color: #8e44ad;
+    --info-color: #2980b9;
+    --link-color: #3498db;
+    --bg-color: #eef2f7;
+}
+
+body {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text);
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-header {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-header h1 { margin: 0; font-size: 1.8em; }
+.site-header nav a {
+    text-decoration: none;
+    color: var(--secondary-text);
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.site-header nav a:hover { background-color: var(--panel-bg); }
+.site-header nav a.active { color: var(--info-color); font-weight: 700; }
+
+.main-grid { display: grid; grid-template-columns: 400px 1fr; gap: 25px; }
+.panel-header { margin-bottom: 20px; }
+.panel-header h2 { margin: 0 0 5px 0; }
+.panel-header p { margin: 0; color: var(--secondary-text); }
+
+.generator-panel, .learning-hub {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    align-self: start;
+}
+
+/* --- Main Page Specific Styles --- */
+.learning-article {
+    background-color: var(--panel-bg);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+.learning-article h3 { margin: 0 0 10px 0; }
+.learning-article p { margin: 0 0 15px 0; line-height: 1.7; }
+.learning-article a { color: var(--link-color); text-decoration: none; font-weight: 700; }
+.learning-article a:hover { text-decoration: underline; }
+
+.result-card {
+    background-color: var(--panel-bg);
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    margin-top: 20px;
+    opacity: 0; /* Animation start point */
+    transform: translateY(10px); /* Animation start point */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.result-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.result-card.hidden { display: none; }
+.result-card h3 { margin: 0 0 10px 0; }
+.result-card ul { list-style: none; padding: 0; margin: 0; }
+.result-card li { padding: 8px 0; border-bottom: 1px solid #eee; }
+.result-card li:last-child { border-bottom: none; }
+.result-card strong { color: var(--info-color); }
+
+/* --- Labs Page Specific Styles --- */
+.module { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 25px; }
+.module h1 { margin-top: 0; font-size: 1.8em; color: var(--primary-text); border-bottom: 2px solid var(--info-color); padding-bottom: 10px; }
+.simulator { display: grid; grid-template-columns: 300px 1fr; gap: 20px; }
+.controls, .results, .unit-preview, .main-content { background-color: var(--panel-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border-color); }
+.control-group { margin-bottom: 20px; }
+.control-group label { display: block; font-weight: 700; margin-bottom: 8px; }
+.control-group select, .control-group input[type="number"] { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); box-sizing: border-box; }
+.control-group input[type="color"] { width: 100%; height: 40px; border: none; padding: 0; border-radius: 8px; cursor: pointer; }
+.control-group input[type="range"] { width: 100%; }
+.font-size-group { display: flex; align-items: center; gap: 10px; }
+.font-size-group input[type="range"] { flex-grow: 1; }
+.font-size-group input[type="number"] { width: 70px; text-align: center; }
+.checkbox-group { display: flex; align-items: center; gap: 10px; }
+.checkbox-group input { width: 20px; height: 20px; }
+.checkbox-group label { margin: 0; }
+.preview { display: flex; justify-content: center; align-items: center; height: 100%; min-height: 200px; border-radius: 12px; padding: 20px; text-align: center; box-sizing: border-box; transition: background-color 0.2s, color 0.2s; }
+.preview-text { font-size: 16px; transition: font-size 0.2s, font-weight 0.2s; }
+.results h2 { margin-top: 0; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; }
+.result-item { margin-bottom: 15px; }
+.result-item strong { font-size: 1.5em; margin-right: 10px; }
+.result-item span { font-size: 1.2em; font-weight: 700; }
+.pass { color: var(--success-color); }
+.fail { color: var(--error-color); }
+.pass-aaa { color: var(--aaa-color); }
+#ai-coach, #unit-ai-coach { margin-top: 20px; padding: 15px; background: white; border: 1px dashed var(--info-color); border-radius: 8px; }
+#ai-coach p, #unit-ai-coach p { margin: 0; color: var(--secondary-text); }
+.unit-preview p { padding: 10px; margin: 5px 0; border-radius: 6px; border: 1px solid transparent; transition: font-size 0.2s ease-in-out, border-color 0.2s; }
+.unit-preview p .label { font-family: monospace; background: #e0e4e8; padding: 2px 6px; border-radius: 4px; margin-right: 10px; }
+
+details > summary { cursor: pointer; font-weight: bold; }
+details .learning-content { margin-top: 20px; }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main-grid { grid-template-columns: 1fr; }
+    .site-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+@media (max-width: 768px) {
+    .simulator { grid-template-columns: 1fr; }
+}
+
+/* --- ✨ VISUAL FEEDBACK ANIMATIONS ✨ --- */
+/* 1. Typing Effect Cursor */
+.typing-cursor::after {
+    content: '▋';
+    animation: blink 0.7s infinite;
+    color: var(--info-color);
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}

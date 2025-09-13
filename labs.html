@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Typo - 인터랙티브 실험실</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <h1>Universe Typo 🚀</h1>
+            <nav>
+                <a href="index.html">AI 가이드 & 학습 허브</a>
+                <a href="labs.html" class="active">인터랙티브 실험실</a>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Module 1: Contrast Simulator -->
+            <div class="module">
+                <h1>1. 명도 대비 & 시각 피로도 시뮬레이터</h1>
+                <div class="simulator">
+                    <div class="controls">
+                        <h2>① 컨트롤 패널</h2>
+                        <div class="control-group"><label for="bg-color">배경색</label><input type="color" id="bg-color" value="#FFFFFF"></div>
+                        <div class="control-group"><label for="text-color">텍스트색</label><input type="color" id="text-color" value="#333333"></div>
+                        <div class="control-group"><label for="font-size">글자 크기 (px)</label><div class="font-size-group"><input type="range" id="font-size-slider" min="10" max="40" value="16" step="0.1"><input type="number" id="font-size-input" min="10" max="40" value="16" step="0.1"></div></div>
+                        <div class="control-group checkbox-group"><input type="checkbox" id="font-bold"><label for="font-bold">굵게 (Bold)</label></div>
+                    </div>
+                    <div class="main-content">
+                        <div class="preview" id="preview"><p id="preview-text" class="preview-text">가나다라 ABC 123<br>실시간으로 텍스트가 바뀝니다.</p></div>
+                        <div class="results">
+                            <h2>② AI 분석 패널</h2>
+                            <div class="result-item"><strong>명도 대비율:</strong><span id="contrast-ratio">4.75:1</span></div>
+                            <div class="result-item"><strong>WCAG AA:</strong><span id="wcag-aa" class="pass">✅ 통과</span></div>
+                            <div class="result-item"><strong>WCAG AAA:</strong><span id="wcag-aaa" class="fail">❌ 실패</span></div>
+                            <div id="ai-coach"><p>🤖 AI 코치: 현재 설정은...</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2: Unit Lab -->
+            <div class="module">
+                <h1>2. 인터랙티브 단위 비교 실험실</h1>
+                <div class="simulator">
+                     <div class="controls">
+                        <h2>① 컨트롤 패널</h2>
+                        <div class="control-group"><label for="base-font-size">기본 글자 크기</label><input type="number" id="base-font-size" value="16" min="10" max="30"></div>
+                        <div class="control-group"><label for="system-font-size-slider">사용자 시스템 글꼴 크기 설정</label><input type="range" id="system-font-size-slider" min="0.8" max="1.5" value="1" step="0.1"></div>
+                    </div>
+                    <div class="main-content">
+                         <div class="unit-preview">
+                            <h2>② 실시간 미리보기</h2>
+                            <p id="pt-text"><span class="label">pt (iOS)</span>고정 크기 텍스트 예시</p>
+                            <p id="px-text"><span class="label">px (Web)</span>고정 크기 텍스트 예시</p>
+                            <p id="sp-text"><span class="label">sp (Android)</span>가변 크기 텍스트 예시</p>
+                        </div>
+                         <div id="unit-ai-coach"><p>🤖 AI 코치: '시스템 글꼴 크기' 슬라이더를 움직여보세요.</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Learning Content Section -->
+            <div class="module">
+                <details>
+                    <summary><h2>[학습 자료] 폰트 크기 단위별 차이점 및 근거</h2></summary>
+                    <div class="learning-content">
+                        <p>각 폰트 크기 단위는 무엇을 불변의 기준점(Anchor)으로 삼는가에 따라 다릅니다. 인쇄물의 '절대적인 물리적 크기', 스크린의 '빛나는 점(픽셀)', 혹은 '사용자의 개인 설정' 등 각 환경에 최적화된 고유의 단위를 사용하는 것입니다.</p>
+                        <article class="learning-article">
+                            <h3>pt (Point) - 인쇄의 절대적 기준</h3>
+                            <p><strong>기준점: 물리적 크기 (Physical Size)</strong>. 1pt는 1/72 인치라는 절대적인 물리적 단위입니다. Apple의 macOS와 iOS가 사용하는 pt는 이 전통적인 인쇄 단위를 디지털 환경에 맞게 재해석한 <strong>논리적 단위(Logical Unit)</strong>입니다. 저해상도(1x) 스크린에서는 1pt가 1px과 같고, 고해상도(2x Retina) 스크린에서는 1pt가 2x2 픽셀의 영역을 차지하여, 해상도에 상관없이 일관된 크기로 디자인할 수 있게 합니다.</p>
+                            <a href="https://developer.apple.com/design/human-interface-guidelines/layout" target="_blank">Apple HIG - Layout</a>
+                        </article>
+                        <article class="learning-article">
+                            <h3>px (Pixel) - 스크린의 기본 구성 요소</h3>
+                            <p><strong>기준점: 스크린의 하드웨어 픽셀 (Hardware Pixel)</strong>. 픽셀은 디지털 스크린을 구성하는 가장 작은 점입니다. 웹 초창기에는 절대적인 단위처럼 쓰였지만, 동일한 100px이라도 저해상도와 고해상도 모니터에서 보이는 물리적 크기가 다른 '해상도 의존성' 문제가 있습니다. 이 때문에 현대 웹에서는 사용자의 접근성을 해칠 수 있어 rem, em 단위와 함께 사용하는 것이 표준이 되었습니다.</p>
+                            <a href="https://www.w3.org/TR/css-values-3/#absolute-lengths" target="_blank">W3C CSS Values & Units</a>
+                        </article>
+                        <article class="learning-article">
+                            <h3>sp와 dp - 안드로이드의 유연한 기준</h3>
+                            <p><strong>기준점: 화면 밀도 + 사용자의 폰트 크기 설정</strong>. sp는 dp의 특성을 가지면서, 사용자가 시스템 설정에서 지정한 '글꼴 크기'에 따라 함께 커지거나 작아지는 텍스트 전용 단위입니다. 레이아웃은 dp로 고정하고 텍스트는 sp로 가변시키는 것이 안드로이드 접근성의 핵심입니다.</p>
+                             <a href="https://developer.android.com/training/multiscreen/screendensities" target="_blank">Android Developer Guide</a>
+                        </article>
+                    </div>
+                </details>
+            </div>
+        </main>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // --- ✨ Typing Effect Function ✨ ---
+    let typingTimeout;
+    function typeEffect(element, text, speed = 30) {
+        if (typingTimeout) clearTimeout(typingTimeout);
+        element.innerHTML = "";
+        element.classList.add('typing-cursor');
+        let i = 0;
+        function typing() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                typingTimeout = setTimeout(typing, speed);
+            } else {
+                element.classList.remove('typing-cursor');
+            }
+        }
+        typing();
+    }
+
+    // --- Module 1: Contrast Simulator Logic ---
+    const bgColorInput = document.getElementById('bg-color');
+    const textColorInput = document.getElementById('text-color');
+    const fontSizeSlider = document.getElementById('font-size-slider');
+    const fontSizeInput = document.getElementById('font-size-input');
+    const fontBoldCheckbox = document.getElementById('font-bold');
+    const preview = document.getElementById('preview');
+    const previewText = document.getElementById('preview-text');
+    const contrastRatioSpan = document.getElementById('contrast-ratio');
+    const wcagAASpan = document.getElementById('wcag-aa');
+    const wcagAAASpan = document.getElementById('wcag-aaa');
+    const aiCoach = document.getElementById('ai-coach').querySelector('p');
+
+    function hexToRgb(hex) {
+        let r = 0, g = 0, b = 0;
+        if (hex.length == 4) {
+            r = "0x" + hex[1] + hex[1];
+            g = "0x" + hex[2] + hex[2];
+            b = "0x" + hex[3] + hex[3];
+        } else if (hex.length == 7) {
+            r = "0x" + hex[1] + hex[2];
+            g = "0x" + hex[3] + hex[4];
+            b = "0x" + hex[5] + hex[6];
+        }
+        return "rgb(" + +r + "," + +g + "," + +b + ")";
+    }
+
+    function getLuminance(rgb) {
+        const [r, g, b] = rgb.match(/\d+/g).map(c => {
+            c /= 255;
+            return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+        });
+        return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    }
+
+    function getContrastRatio(color1, color2) {
+        const lum1 = getLuminance(hexToRgb(color1));
+        const lum2 = getLuminance(hexToRgb(color2));
+        return (Math.max(lum1, lum2) + 0.05) / (Math.min(lum1, lum2) + 0.05);
+    }
+
+    function updateContrast() {
+        const bgColor = bgColorInput.value;
+        const textColor = textColorInput.value;
+        const fontSize = parseFloat(fontSizeInput.value);
+        const isBold = fontBoldCheckbox.checked;
+
+        preview.style.backgroundColor = bgColor;
+        previewText.style.color = textColor;
+        previewText.style.fontSize = `${fontSize}px`;
+        previewText.style.fontWeight = isBold ? 'bold' : 'normal';
+
+        const ratio = getContrastRatio(bgColor, textColor);
+        contrastRatioSpan.textContent = ratio.toFixed(2) + ':1';
+
+        const isLargeText = fontSize >= 18.66 || (fontSize >= 14.66 && isBold);
+        const aaThreshold = isLargeText ? 3 : 4.5;
+        const aaaThreshold = isLargeText ? 4.5 : 7;
+
+        const aaPass = ratio >= aaThreshold;
+        const aaaPass = ratio >= aaaThreshold;
+
+        updateStatus(wcagAASpan, aaPass, 'pass', 'fail', '✅ 통과', '❌ 실패');
+        updateStatus(wcagAAASpan, aaaPass, 'pass-aaa', 'fail', '✅ 통과', '❌ 실패');
+        
+        updateAICoach(ratio, aaPass, aaaPass, isLargeText);
+    }
+    
+    function updateStatus(element, condition, passClass, failClass, passText, failText) {
+        element.textContent = condition ? passText : failText;
+        element.classList.toggle(passClass, condition);
+        element.classList.toggle(failClass, !condition);
+    }
+    
+    let lastCoachText = "";
+    function updateAICoach(ratio, aaPass, aaaPass, isLargeText) {
+        let coachText = "";
+        if (aaaPass) {
+            coachText = "완벽합니다! WCAG AAA 기준을 통과하여 저시력 사용자도 명확하게 읽을 수 있습니다. 다만, 이 조합을 전체 배경과 본문에 사용할 경우, 과도한 대비로 일부 사용자는 장시간 사용 시 눈에 피로를 느낄 수 있습니다.";
+        } else if (aaPass) {
+            coachText = "좋습니다! 일반적인 텍스트에 권장되는 WCAG AA 기준을 통과했습니다. 대부분의 사용자에게 편안한 가독성을 제공합니다.";
+        } else {
+            coachText = "주의! 최소 명도 대비 기준을 충족하지 못했습니다. 사용자가 텍스트를 읽기 어려울 수 있습니다. 색상 대비를 높여보세요.";
+        }
+
+        if (isLargeText && !aaPass) {
+            coachText += " 현재 텍스트는 '큰 텍스트'로 분류되어 상대적으로 낮은 대비(3:1)만으로도 AA 기준을 통과할 수 있습니다.";
+        } else if (!isLargeText && !aaPass) {
+            coachText += " 18.66px 미만의 일반 텍스트는 더 높은 대비(4.5:1)가 필요합니다.";
+        }
+        
+        if (coachText !== lastCoachText) {
+            typeEffect(aiCoach, "🤖 AI 코치: " + coachText);
+            lastCoachText = coachText;
+        }
+    }
+
+    [bgColorInput, textColorInput, fontBoldCheckbox].forEach(el => el.addEventListener('input', updateContrast));
+    fontSizeSlider.addEventListener('input', () => { fontSizeInput.value = fontSizeSlider.value; updateContrast(); });
+    fontSizeInput.addEventListener('input', () => { fontSizeSlider.value = fontSizeInput.value; updateContrast(); });
+    
+    // --- Module 2: Unit Lab Logic ---
+    const baseFontSizeInput = document.getElementById('base-font-size');
+    const systemSizeSlider = document.getElementById('system-font-size-slider');
+    const ptText = document.getElementById('pt-text');
+    const pxText = document.getElementById('px-text');
+    const spText = document.getElementById('sp-text');
+    const unitAiCoach = document.getElementById('unit-ai-coach').querySelector('p');
+
+    let lastUnitCoachText = "";
+    function updateUnits() {
+        const baseSize = baseFontSizeInput.value;
+        const systemMultiplier = systemSizeSlider.value;
+
+        ptText.style.fontSize = `${baseSize}pt`;
+        pxText.style.fontSize = `${baseSize}px`;
+        spText.style.fontSize = `${baseSize * systemMultiplier}px`; // sp is simulated with px for web demonstration
+
+        let unitCoachText = "";
+        if(systemMultiplier == 1) {
+            unitCoachText = "'시스템 글꼴 크기' 슬라이더를 움직여 각 단위가 어떻게 반응하는지 직접 확인해보세요.";
+        } else if (systemMultiplier > 1.2) {
+            unitCoachText = "차이점이 보이시나요? sp 단위만 사용자의 설정을 존중하여 함께 커졌습니다. 이것이 바로 접근성을 위해 Android 앱 텍스트에 sp를 사용해야 하는 이유입니다.";
+        } else {
+            unitCoachText = "sp 단위가 사용자의 설정에 따라 동적으로 변하고 있습니다. pt와 px는 고정된 크기를 유지합니다.";
+        }
+
+        if(unitCoachText !== lastUnitCoachText) {
+            typeEffect(unitAiCoach, "🤖 AI 코치: " + unitCoachText);
+            lastUnitCoachText = unitCoachText;
+        }
+    }
+
+    [baseFontSizeInput, systemSizeSlider].forEach(el => el.addEventListener('input', updateUnits));
+    
+    // Initial calls
+    updateContrast();
+    updateUnits();
+});
+</script>
+
+</body>
+</html>

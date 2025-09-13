@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universe Typo - AI 가이드 & 학습 허브</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="site-header">
+            <h1>Universe Typo 🚀</h1>
+            <nav>
+                <a href="index.html" class="active">AI 가이드 & 학습 허브</a>
+                <a href="labs.html">인터랙티브 실험실</a>
+            </nav>
+        </header>
+
+        <main class="main-grid">
+            <aside class="generator-panel">
+                <div class="panel-header">
+                    <h2>AI 프로젝트 스타터킷</h2>
+                    <p>프로젝트 환경을 선택하면 AI가 최적의 타이포그래피 가이드라인을 생성합니다.</p>
+                </div>
+                <div class="controls">
+                    <select id="device-select" class="control-group">
+                        <option value="">-- 1. 디바이스 선택 --</option>
+                    </select>
+                    <select id="os-select" class="control-group" disabled>
+                        <option value="">-- 2. OS/플랫폼 선택 --</option>
+                    </select>
+                </div>
+                <div id="starter-kit" class="result-card hidden">
+                    <h3>AI 추천 가이드라인</h3>
+                    <ul id="kit-list"></ul>
+                </div>
+            </aside>
+            <section class="learning-hub">
+                <div class="panel-header">
+                    <h2>HCI & WCAG 학습 허브</h2>
+                    <p>AI 추천의 근거가 되는 핵심 원칙들을 학습하세요.</p>
+                </div>
+                <article class="learning-article">
+                    <h3>1. 글꼴의 종류: Serif vs. Sans-serif</h3>
+                    <p>고해상도 디스플레이가 보편화되면서, 두 글꼴 유형 간의 가독성 차이는 통계적으로 유의미하지 않다는 연구가 지배적입니다. 글꼴 유형보다 **글꼴 자체의 디자인 완성도(x-height, 글자 폭 등)**가 가독성에 훨씬 더 큰 영향을 미칩니다.</p>
+                    <a href="https://dl.acm.org/doi/10.1145/274644.274658" target="_blank">관련 연구 보기 (CHI '98)</a>
+                </article>
+                <article class="learning-article">
+                    <h3>2. 글꼴 크기와 X-높이(X-Height)</h3>
+                    <p>알파벳 소문자 'x'의 높이를 의미하는 'x-height'가 큰 폰트일수록 동일한 포인트 크기에서도 훨씬 더 크고 명확하게 보입니다. 본문 가독성을 크게 향상시키는 결정적인 요소입니다.</p>
+                    <a href="https://www.researchgate.net/publication/7488009_Serifs_and_font_legibility" target="_blank">관련 연구 보기</a>
+                </article>
+                <article class="learning-article">
+                    <h3>3. 줄 길이와 행간 (Cognitive Load)</h3>
+                    <p>줄이 너무 길면(75자 이상) 다음 줄을 찾기 어려워 인지 부하가 증가하고, 너무 짧으면(45자 미만) 읽기 흐름이 깨집니다. 행간은 **1.5배 이상**으로 설정하여 시선의 '탈선 현상'을 방지하는 것이 중요합니다.</p>
+                    <a href="https://www.researchgate.net/publication/229505881_The_influence_of_reading_speed_and_line_length_on_the_effectiveness_of_reading_from_screen" target="_blank">관련 연구 보기</a>
+                </article>
+                <article class="learning-article">
+                    <h3>4. 명도 대비와 시각적 피로도</h3>
+                    <p>WCAG의 명도 대비 기준(AA: 4.5:1)은 단순히 저시력자만을 위한 것이 아닙니다. 낮은 대비는 일반 사용자조차도 안구 근육의 긴장도를 높여 시각적 피로도를 급격히 증가시키고, 정보 이해도를 저하시킵니다.</p>
+                    <a href="https://www.koreascience.or.kr/article/JAKO201402856424911.page" target="_blank">관련 연구 보기 (국내)</a>
+                </article>
+            </section>
+        </main>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

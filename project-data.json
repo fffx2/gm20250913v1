@@ -1,0 +1,64 @@
+{
+    "devices": [
+        {
+            "name": "모바일 (Mobile)",
+            "os": [
+                {
+                    "name": "iOS",
+                    "guidelines": {
+                        "font": "SF Pro (시스템 기본)",
+                        "minBodySize": "17pt",
+                        "lineHeight": "약 1.4배",
+                        "contrastRatio": "WCAG AA (4.5:1) 필수"
+                    }
+                },
+                {
+                    "name": "Android (One UI)",
+                    "guidelines": {
+                        "font": "One UI Sans (시스템 기본)",
+                        "minBodySize": "16sp",
+                        "lineHeight": "약 1.5배",
+                        "contrastRatio": "WCAG AA (4.5:1) 필수"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "VR/공간 (VR/Spatial)",
+            "os": [
+                {
+                    "name": "visionOS",
+                    "guidelines": {
+                        "font": "SF Pro (시스템 기본)",
+                        "minBodySize": "32pt (Body 스타일)",
+                        "lineHeight": "시스템 자동 조절",
+                        "contrastRatio": "Vibrancy 효과로 가독성 확보"
+                    }
+                },
+                {
+                    "name": "Horizon OS (Meta Quest)",
+                    "guidelines": {
+                        "font": "Inter 계열 (시스템 기본)",
+                        "minBodySize": "2cm (2m 거리 기준)",
+                        "lineHeight": "1.5배 이상 권장",
+                        "contrastRatio": "WCAG AA (4.5:1) 이상 권장"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "데스크톱 (Desktop)",
+            "os": [
+                {
+                    "name": "Web",
+                    "guidelines": {
+                        "font": "Pretendard, Roboto, -apple-system 등",
+                        "minBodySize": "16px",
+                        "lineHeight": "1.5 ~ 1.7배",
+                        "contrastRatio": "WCAG AA (4.5:1) 필수"
+                    }
+                }
+            ]
+        }
+    ]
+}
